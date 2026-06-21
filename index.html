@@ -4,37 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>env-team</title>
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="src/css/output.css" />
+    <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Tabler Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   </head>
 
   <body class="font-inter bg-dark text-white overflow-x-hidden">
-    <div class="bg-glow" style="width:40vw;height:40vw;background:radial-gradient(circle,#d1d5db 0%,transparent 70%);top:20%;left:-10vw;"></div>
-    <div class="bg-glow" style="width:30vw;height:30vw;background:radial-gradient(circle,#d1d5db 0%,transparent 70%);bottom:-5vw;right:-5vw;"></div>
-    <div class="bg-glow" style="width:50vw;height:50vw;background:radial-gradient(circle,#d1d5db 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+    <!-- Background Glow Effects -->
+    <div class="bg-glow" style="width: 40vw; height: 40vw; background: radial-gradient(circle, #d1d5db 0%, transparent 70%); top: 20%; left: -10vw"></div>
+    <div class="bg-glow" style="width: 30vw; height: 30vw; background: radial-gradient(circle, #d1d5db 0%, transparent 70%); bottom: -5vw; right: -5vw"></div>
+    <div class="bg-glow" style="width: 50vw; height: 50vw; background: radial-gradient(circle, #d1d5db 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%)"></div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar fixed top-0 left-0 w-full z-50 bg-dark border-b border-[#1f1f1f] transition-all duration-300">
+    <!-- NAVBAR: Fixed top navigation with glass effect -->
+    <nav class="navbar fixed top-0 left-0 w-full z-50 bg-dark/80 backdrop-blur-lg border-b border-white/10 transition-all duration-300">
       <div class="flex items-center justify-between px-5 sm:px-10 py-4 sm:py-5">
-        <a href="#" class="font-space font-extrabold text-xl sm:text-2xl no-underline text-white shrink-0">
-          <span class="text-lime">env</span>-team
-        </a>
+        <!-- Logo -->
+        <a href="#" class="font-space font-extrabold text-xl sm:text-2xl no-underline text-white shrink-0"> <span class="text-lime">env</span>-team </a>
 
+        <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex items-center gap-8">
           <a href="#about" class="font-inter font-medium text-sm text-[#aaa] no-underline transition-colors duration-200 hover:text-white">Tentang Kami</a>
           <a href="#services" class="font-inter font-medium text-sm text-[#aaa] no-underline transition-colors duration-200 hover:text-white">Layanan</a>
+          <a href="#portfolio" class="font-inter font-medium text-sm text-[#aaa] no-underline transition-colors duration-200 hover:text-white">Portofolio</a>
           <a href="#team" class="font-inter font-medium text-sm text-[#aaa] no-underline transition-colors duration-200 hover:text-white">Tim</a>
           <a href="#contact" class="font-inter font-medium text-sm text-[#aaa] no-underline transition-colors duration-200 hover:text-white">Kontak</a>
-          <a href="#contact" class="font-space font-bold text-sm no-underline bg-lime text-dark rounded-full px-[22px] py-[10px] transition-opacity duration-200 hover:opacity-85 active:scale-97">Start a Project</a>
+          <a href="#contact" class="font-space font-bold text-sm no-underline bg-lime text-dark rounded-full px-[22px] py-[10px] transition-opacity duration-200 hover:opacity-85 active:scale-97">Konsultasi Gratis</a>
         </div>
 
+        <!-- Mobile Menu Toggle Button -->
         <button class="mobile-menu-btn lg:hidden bg-dark border border-white/20 text-white w-10 h-10 flex items-center justify-center rounded-lg cursor-pointer relative z-[110] transition-colors duration-200 hover:bg-[#1a1a1a]">
+          <!-- Hamburger Icon -->
           <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" y1="6" x2="20" y2="6"></line>
             <line x1="4" y1="12" x2="20" y2="12"></line>
             <line x1="4" y1="18" x2="20" y2="18"></line>
           </svg>
+          <!-- Close Icon -->
           <svg class="close-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -43,40 +51,57 @@
       </div>
     </nav>
 
-    <!-- OVERLAY -->
+    <!-- OVERLAY: Semi-transparent backdrop when mobile menu is open -->
     <div class="mobile-overlay fixed inset-0 bg-black/50 z-[90] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
 
-    <!-- SIDEBAR -->
+    <!-- SIDEBAR: Mobile navigation menu that slides in from the right -->
     <div class="mobile-menu fixed top-0 right-0 h-screen w-72 sm:w-80 z-[100] bg-dark border-l border-[#1f1f1f] flex flex-col pt-28 px-8 gap-6 translate-x-full transition-transform duration-300 lg:hidden">
       <a href="#about" class="font-space font-bold text-xl no-underline text-white transition-colors duration-200 hover:text-lime">Tentang Kami</a>
       <a href="#services" class="font-space font-bold text-xl no-underline text-white transition-colors duration-200 hover:text-lime">Layanan</a>
+      <a href="#portfolio" class="font-space font-bold text-xl no-underline text-white transition-colors duration-200 hover:text-lime">Portofolio</a>
       <a href="#team" class="font-space font-bold text-xl no-underline text-white transition-colors duration-200 hover:text-lime">Tim</a>
       <a href="#contact" class="font-space font-bold text-xl no-underline text-white transition-colors duration-200 hover:text-lime">Kontak</a>
       <div class="mt-4 pt-6 border-t border-[#1f1f1f]">
-        <a href="#contact" class="font-space font-bold text-sm no-underline bg-lime text-dark rounded-full px-6 py-3 text-center block transition-opacity duration-200 hover:opacity-85">Start a Project</a>
+        <a href="#contact" class="font-space font-bold text-sm no-underline bg-lime text-dark rounded-full px-6 py-3 text-center block transition-opacity duration-200 hover:opacity-85">Konsultasi Gratis</a>
       </div>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <div class="bg-white rounded-b-[80px] lg:rounded-b-[120px] relative pt-24 sm:pt-28 pb-0 mb-8 sm:mb-12 w-full min-h-screen flex flex-col">
       <header class="px-5 sm:px-10 lg:px-16 py-8 sm:py-16 text-center relative w-full flex-1 flex items-center justify-center">
         <div class="w-full relative">
+          <!-- Hero Text & CTA -->
           <div class="w-full mb-8 sm:mb-16" data-aos="fade-up">
-            <h1 class="font-space text-dark font-extrabold tracking-tighter mb-6 leading-[1.05]" style="font-size:clamp(2.5rem,5.5vw,3.75rem);letter-spacing:-2px;">Memberdayakan Bisnis<br />Melalui Solusi Kreatif</h1>
+            <h1 class="font-space text-dark font-extrabold tracking-tighter mb-6 leading-[1.05]" style="font-size: clamp(2.5rem, 5.5vw, 3.75rem); letter-spacing: -2px">Solusi Web untuk<br />Bisnis yang Ingin Berkembang</h1>
             <div class="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-16 text-left w-full max-w-5xl mx-auto">
-              <p class="text-[#888] flex-1 text-sm sm:text-base lg:text-lg leading-relaxed">Dari pengembangan web hingga branding, kami memberikan strategi inovatif yang meningkatkan brand Anda dan mendorong pertumbuhan. Mari ciptakan sesuatu yang luar biasa bersama-sama.</p>
-              <a href="#services" class="font-space font-semibold text-sm no-underline border border-[#e5e5e5] text-dark rounded-full px-8 py-4 inline-flex items-center gap-3 whitespace-nowrap transition-all duration-300 hover:border-dark hover:bg-black/5 hover:-translate-y-0.5 shrink-0">Inovasi Brand Anda</a>
+              <p class="text-[#888] flex-1 text-sm sm:text-base lg:text-lg leading-relaxed">
+                Kami membantu bisnis kecil dan individu hadir secara profesional di dunia digital melalui solusi web yang terjangkau dan berkualitas. Dari landing page hingga website company profile — semuanya mungkin.
+              </p>
+              <a
+                href="#services"
+                class="font-space font-semibold text-sm no-underline border border-[#e5e5e5] text-dark rounded-full px-8 py-4 inline-flex items-center gap-3 whitespace-nowrap transition-all duration-300 hover:border-dark hover:bg-black/5 hover:-translate-y-0.5 shrink-0"
+                >Lihat Portofolio</a
+              >
             </div>
           </div>
 
+          <!-- Hero Image -->
           <div class="relative w-4/5 lg:w-3/5 mx-auto -mb-8 lg:-mb-12" data-aos="zoom-in" data-aos-delay="200">
             <img src="assets/img/hero_woman.png" alt="Hero Woman" class="w-full block object-cover rounded-t-[80px] lg:rounded-t-[120px]" />
+            <!-- Floating action buttons over the hero image -->
             <div class="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-4 bg-black/70 backdrop-blur-[20px] p-1.5 sm:p-2 rounded-full w-max">
-              <a href="#contact" class="font-space font-bold text-xs sm:text-sm no-underline bg-lime text-dark rounded-full px-4 sm:px-5 py-2 sm:py-2.5 whitespace-nowrap">Mulai Proyek</a>
-              <a href="#contact" class="font-space font-bold text-xs sm:text-sm no-underline border border-white/20 text-white rounded-full px-4 sm:px-5 py-2 sm:py-2.5 whitespace-nowrap transition-all duration-300 hover:border-white">Mari Kolaborasi</a>
+              <a href="#contact" class="font-space font-bold text-xs sm:text-sm no-underline bg-lime text-dark rounded-full px-4 sm:px-5 py-2 sm:py-2.5 whitespace-nowrap">Konsultasi Gratis</a>
+              <a href="#contact" class="font-space font-bold text-xs sm:text-sm no-underline border border-white/20 text-white rounded-full px-4 sm:px-5 py-2 sm:py-2.5 whitespace-nowrap transition-all duration-300 hover:border-white"
+                >Lihat Portofolio</a
+              >
             </div>
-            <div class="experience-badge absolute top-1/2 -translate-y-1/2 right-0 lg:right-[-5vw] bg-white p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl text-center flex flex-col gap-1 sm:gap-2 transition-all duration-300 hover:-translate-y-3 hover:scale-105 shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
-              <div class="flex gap-0.5 text-lime text-base sm:text-lg lg:text-xl"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
+            <!-- Experience Badge -->
+            <div
+              class="experience-badge absolute top-1/2 -translate-y-1/2 right-0 lg:right-[-5vw] bg-white p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl text-center flex flex-col gap-1 sm:gap-2 transition-all duration-300 hover:-translate-y-3 hover:scale-105 shadow-[0_10px_30px_rgba(0,0,0,0.1)]"
+            >
+              <div class="flex gap-0.5 text-lime text-base sm:text-lg lg:text-xl">
+                <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+              </div>
               <span class="font-space font-extrabold text-dark text-xl sm:text-2xl lg:text-3xl">10 Tahun</span>
               <span class="text-[#777] text-xs sm:text-sm">Pengalaman</span>
             </div>
@@ -85,124 +110,204 @@
       </header>
     </div>
 
-    <!-- STATS -->
+    <!-- STATS SECTION: Company statistics in a grid -->
     <section class="px-5 sm:px-10 lg:px-16 py-10 sm:py-16 lg:py-20 w-full" data-aos="fade-up">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 bg-[#111] p-6 sm:p-10 lg:p-16 rounded-2xl border border-[#1f1f1f]">
         <div class="text-center transition-all duration-300 hover:scale-105">
-          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">2000+</h2>
-          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Perusahaan</p>
+          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">5+</h2>
+          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Proyek Selesai</p>
         </div>
         <div class="text-center transition-all duration-300 hover:scale-105">
-          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">10+</h2>
-          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Tahun Pengalaman</p>
+          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">2</h2>
+          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Anggota Tim</p>
         </div>
         <div class="text-center transition-all duration-300 hover:scale-105">
-          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">800+</h2>
-          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Jam Digital</p>
+          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">3</h2>
+          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Layanan Utama</p>
         </div>
         <div class="text-center transition-all duration-300 hover:scale-105">
-          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">150M+</h2>
-          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Pendapatan Tercatat</p>
+          <h2 class="font-space font-extrabold text-lime mb-1 text-3xl sm:text-4xl lg:text-5xl">100%</h2>
+          <p class="font-inter text-[#888] text-xs sm:text-sm lg:text-base">Klien Puas</p>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="px-5 sm:px-10 lg:px-16 py-10 sm:py-16 lg:py-20 w-full scroll-mt-24">
       <div class="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-8 lg:mb-16" data-aos="fade-up">
         <div>
-          <div class="font-space font-bold text-xs tracking-[0.1em] text-lime uppercase flex items-center gap-2 mb-4 before:content-[''] before:w-5 before:h-[2px] before:bg-lime">A Creative Dev Team</div>
-          <h2 class="font-space font-extrabold tracking-tight leading-[1.1]" style="font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:-1.5px;">Mengubah Ide Menjadi<br />Karya Utama</h2>
+          <div class="font-space font-bold text-xs tracking-[0.1em] text-lime uppercase flex items-center gap-2 mb-4 before:content-[''] before:w-5 before:h-[2px] before:bg-lime">Tentang Kami</div>
+          <h2 class="font-space font-extrabold tracking-tight leading-[1.1]" style="font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -1.5px">Membangun Kehadiran<br />Digital yang Profesional</h2>
         </div>
-        <p class="font-inter text-[#888] text-sm sm:text-base leading-relaxed max-w-xl">Kami mungkin tim yang kompak, namun kreativitas kami tidak terbatas. Dengan tetap lincah dan bekerja berdampingan dengan klien, kami mengubah ide menjadi desain mutakhir yang memberikan kesan mendalam.</p>
+        <p class="font-inter text-[#888] text-sm sm:text-base leading-relaxed max-w-xl">
+          env-team adalah tim pengembangan web yang berkomitmen membantu bisnis kecil dan individu untuk hadir secara profesional di dunia digital. Dengan pendekatan yang ramah dan hasil yang berkualitas, kami siap mewujudkan website impian Anda.
+        </p>
       </div>
 
+      <!-- About Image Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-[60%_38%] justify-between w-full gap-6" data-aos="fade-up" data-aos-delay="200">
         <div class="relative rounded-2xl overflow-hidden h-[300px] sm:h-[35vw] max-h-[500px] group">
           <img src="assets/img/office_team.png" alt="Tim Sedang Bekerja" class="w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105" />
-          <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 bg-lime text-dark font-space font-bold text-[11px] sm:text-xs tracking-[0.05em] uppercase px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-all duration-300 group-hover:bg-white">Agensi Desain Kreatif</div>
+          <div
+            class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 bg-lime text-dark font-space font-bold text-[11px] sm:text-xs tracking-[0.05em] uppercase px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-all duration-300 group-hover:bg-white"
+          >
+            Solusi Web Terjangkau
+          </div>
         </div>
         <div class="relative rounded-2xl overflow-hidden h-[300px] sm:h-[35vw] max-h-[500px] group">
           <img src="assets/img/hero_woman.png" alt="Wanita Berpikir" class="w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105" />
-          <div class="absolute top-4 sm:top-6 left-4 sm:left-6 bg-white text-dark w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-lg sm:text-2xl transition-all duration-300 group-hover:rotate-[15deg] group-hover:scale-110">
+          <div
+            class="absolute top-4 sm:top-6 left-4 sm:left-6 bg-white text-dark w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-lg sm:text-2xl transition-all duration-300 group-hover:rotate-[15deg] group-hover:scale-110"
+          >
             <i class="ti ti-lightbulb"></i>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="px-5 sm:px-10 lg:px-16 py-10 sm:py-16 lg:py-20 w-full scroll-mt-24">
       <div class="bg-[#111] rounded-2xl p-6 sm:p-10 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 border border-[#1f1f1f]" data-aos="fade-up">
+        <!-- Services List -->
         <div class="relative lg:pl-16">
+          <!-- Side label (desktop only) -->
           <div class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 text-lime font-space font-bold text-xs tracking-[0.1em] whitespace-nowrap">Layanan</div>
           <div class="mb-8 lg:mb-12">
-            <h2 class="font-space font-extrabold tracking-tight leading-[1.1] mb-4" style="font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:-1.5px;">Layanan <span class="bg-lime text-dark px-2 rounded-lg inline-block">Kami</span></h2>
-            <p class="font-inter text-[#888] text-sm sm:text-base leading-relaxed">Kami menawarkan berbagai layanan kreatif dan digital yang dirancang untuk membantu brand Anda menonjol.</p>
+            <h2 class="font-space font-extrabold tracking-tight leading-[1.1] mb-4" style="font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -1.5px">
+              Layanan <span class="bg-lime text-dark px-2 rounded-lg inline-block">Kami</span>
+            </h2>
+            <p class="font-inter text-[#888] text-sm sm:text-base leading-relaxed">Kami menawarkan jasa pengembangan web yang terjangkau untuk membantu bisnis Anda hadir secara profesional di dunia digital.</p>
           </div>
+          <!-- Service items -->
           <div class="flex flex-col gap-3">
             <a href="#" class="flex items-center px-5 sm:px-8 py-3 sm:py-4 border border-[#1f1f1f] rounded-full transition-all duration-300 hover:border-lime hover:bg-white/5 hover:translate-x-2 no-underline text-white group">
               <span class="font-space font-bold mr-5 sm:mr-8 text-lime text-sm sm:text-base">01</span>
-              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">UI/UX Design</span>
+              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">Pembuatan Website</span>
+              <span class="text-[#666] text-xs sm:text-sm hidden sm:block mr-4">Landing Page · Company Profile · Portofolio</span>
               <i class="ti ti-arrow-right text-sm sm:text-base opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-lime"></i>
             </a>
             <a href="#" class="flex items-center px-5 sm:px-8 py-3 sm:py-4 border border-[#1f1f1f] rounded-full transition-all duration-300 hover:border-lime hover:bg-white/5 hover:translate-x-2 no-underline text-white group">
               <span class="font-space font-bold mr-5 sm:mr-8 text-lime text-sm sm:text-base">02</span>
-              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">Web Development</span>
+              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">Penambahan Fitur</span>
+              <span class="text-[#666] text-xs sm:text-sm hidden sm:block mr-4">Form Kontak · Integrasi WA · Galeri · Blog</span>
               <i class="ti ti-arrow-right text-sm sm:text-base opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-lime"></i>
             </a>
             <a href="#" class="flex items-center px-5 sm:px-8 py-3 sm:py-4 border border-[#1f1f1f] rounded-full transition-all duration-300 hover:border-lime hover:bg-white/5 hover:translate-x-2 no-underline text-white group">
               <span class="font-space font-bold mr-5 sm:mr-8 text-lime text-sm sm:text-base">03</span>
-              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">3D Designs</span>
+              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">Revisi & Perbaikan Web</span>
+              <span class="text-[#666] text-xs sm:text-sm hidden sm:block mr-4">Bug Fixing · Update Tampilan · Optimasi</span>
               <i class="ti ti-arrow-right text-sm sm:text-base opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-lime"></i>
             </a>
             <a href="#" class="flex items-center px-5 sm:px-8 py-3 sm:py-4 border border-[#1f1f1f] rounded-full transition-all duration-300 hover:border-lime hover:bg-white/5 hover:translate-x-2 no-underline text-white group">
               <span class="font-space font-bold mr-5 sm:mr-8 text-lime text-sm sm:text-base">04</span>
+              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">UI/UX Design</span>
+              <span class="text-[#666] text-xs sm:text-sm hidden sm:block mr-4">Wireframe · Prototype · Desain Antarmuka</span>
+              <i class="ti ti-arrow-right text-sm sm:text-base opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-lime"></i>
+            </a>
+            <a href="#" class="flex items-center px-5 sm:px-8 py-3 sm:py-4 border border-[#1f1f1f] rounded-full transition-all duration-300 hover:border-lime hover:bg-white/5 hover:translate-x-2 no-underline text-white group">
+              <span class="font-space font-bold mr-5 sm:mr-8 text-lime text-sm sm:text-base">05</span>
+              <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">3D Designs</span>
+              <span class="text-[#666] text-xs sm:text-sm hidden sm:block mr-4">Modeling · Visual · Interaktif</span>
+              <i class="ti ti-arrow-right text-sm sm:text-base opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-lime"></i>
+            </a>
+            <a href="#" class="flex items-center px-5 sm:px-8 py-3 sm:py-4 border border-[#1f1f1f] rounded-full transition-all duration-300 hover:border-lime hover:bg-white/5 hover:translate-x-2 no-underline text-white group">
+              <span class="font-space font-bold mr-5 sm:mr-8 text-lime text-sm sm:text-base">06</span>
               <span class="flex-1 font-inter font-medium text-sm sm:text-base lg:text-lg">Motion Graphics</span>
+              <span class="text-[#666] text-xs sm:text-sm hidden sm:block mr-4">Animasi · Video · Grafis Gerak</span>
               <i class="ti ti-arrow-right text-sm sm:text-base opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-lime"></i>
             </a>
           </div>
         </div>
 
+        <!-- Services Visual -->
         <div class="flex flex-col gap-4 sm:gap-6">
           <div class="rounded-2xl overflow-hidden flex-1 max-h-[300px] group">
             <img src="assets/img/office_team.png" alt="Proses Kerja" class="w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105" />
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div class="p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[180px] sm:min-h-[220px] bg-dark border border-[#1f1f1f] transition-all duration-300 hover:-translate-y-1">
-              <p class="font-inter text-sm sm:text-base text-[#888] leading-relaxed">Pernah bertanya-tanya bagaimana keajaiban desain terjadi?</p>
-              <h4 class="font-space font-bold text-base sm:text-lg lg:text-xl text-white flex items-center justify-between mt-4">Lihat cara kami bekerja <i class="ti ti-arrow-up-right"></i></h4>
+              <p class="font-inter text-sm sm:text-base text-[#888] leading-relaxed">Mulai dari Rp 500rb untuk landing page 1 halaman. Kami juga menyediakan paket yang lebih lengkap.</p>
+              <h4 class="font-space font-bold text-base sm:text-lg lg:text-xl text-white flex items-center justify-between mt-4">Lihat paket kami <i class="ti ti-arrow-up-right"></i></h4>
             </div>
             <div class="p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[180px] sm:min-h-[220px] bg-lime text-dark transition-all duration-300 hover:-translate-y-1">
-              <p class="font-inter text-sm sm:text-base text-black/60 leading-relaxed">Mencari ahli desain yang dapat mewujudkan visi Anda?</p>
-              <h4 class="font-space font-bold text-base sm:text-lg lg:text-xl flex items-center justify-between mt-4">Temui ahli kami <i class="ti ti-arrow-up-right"></i></h4>
+              <p class="font-inter text-sm sm:text-base text-black/60 leading-relaxed">Punya proyek atau pertanyaan? Kami siap membantu Anda mewujudkan visi digital menjadi kenyataan.</p>
+              <h4 class="font-space font-bold text-base sm:text-lg lg:text-xl flex items-center justify-between mt-4">Konsultasi gratis <i class="ti ti-arrow-up-right"></i></h4>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BANNER -->
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="px-5 sm:px-10 lg:px-16 py-10 sm:py-16 lg:py-20 w-full scroll-mt-24">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 lg:mb-16 gap-6" data-aos="fade-up">
+        <div>
+          <div class="font-space font-bold text-xs tracking-[0.1em] text-lime uppercase flex items-center gap-2 mb-4 before:content-[''] before:w-5 before:h-[2px] before:bg-lime">Portofolio</div>
+          <h2 class="font-space font-extrabold tracking-tight leading-[1.1]" style="font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -1.5px">Proyek <span class="bg-lime text-dark px-2 rounded-lg inline-block">Kami</span></h2>
+        </div>
+        <a href="#" class="font-space font-semibold text-sm no-underline border border-[#333] text-white rounded-full px-6 py-3 inline-flex items-center gap-2 transition-all duration-200 hover:border-white hover:-translate-y-0.5 shrink-0">
+          Lihat Semua <i class="ti ti-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" data-aos="fade-up" data-aos-delay="200">
+        <!-- Portfolio Card 1 -->
+        <div class="group bg-[#111] border border-[#1f1f1f] rounded-2xl overflow-hidden transition-all duration-300 hover:border-lime hover:-translate-y-1">
+          <div class="h-48 sm:h-56 overflow-hidden">
+            <img src="assets/img/office_team.png" alt="Company Profile" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" />
+          </div>
+          <div class="p-5 sm:p-6">
+            <span class="text-lime font-space font-bold text-xs tracking-wide">Landing Page</span>
+            <h4 class="font-space font-bold text-white text-base sm:text-lg mt-1 mb-2">Company Profile UMKM</h4>
+            <p class="font-inter text-[#888] text-xs sm:text-sm leading-relaxed">Website company profile responsif dengan integrasi WhatsApp dan form kontak.</p>
+          </div>
+        </div>
+        <!-- Portfolio Card 2 -->
+        <div class="group bg-[#111] border border-[#1f1f1f] rounded-2xl overflow-hidden transition-all duration-300 hover:border-lime hover:-translate-y-1">
+          <div class="h-48 sm:h-56 overflow-hidden">
+            <img src="assets/img/hero_woman.png" alt="Portfolio Website" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" />
+          </div>
+          <div class="p-5 sm:p-6">
+            <span class="text-lime font-space font-bold text-xs tracking-wide">Portfolio</span>
+            <h4 class="font-space font-bold text-white text-base sm:text-lg mt-1 mb-2">Personal Portfolio</h4>
+            <p class="font-inter text-[#888] text-xs sm:text-sm leading-relaxed">Website portofolio pribadi dengan galeri proyek dan halaman tentang saya.</p>
+          </div>
+        </div>
+        <!-- Portfolio Card 3 -->
+        <div class="group bg-[#111] border border-[#1f1f1f] rounded-2xl overflow-hidden transition-all duration-300 hover:border-lime hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+          <div class="h-48 sm:h-56 overflow-hidden">
+            <img src="assets/img/office_team.png" alt="Fitur Website" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" />
+          </div>
+          <div class="p-5 sm:p-6">
+            <span class="text-lime font-space font-bold text-xs tracking-wide">Fitur</span>
+            <h4 class="font-space font-bold text-white text-base sm:text-lg mt-1 mb-2">Integrasi Media Sosial</h4>
+            <p class="font-inter text-[#888] text-xs sm:text-sm leading-relaxed">Penambahan fitur galeri, blog, dan integrasi Instagram/TikTok ke website.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER: Motivational divider -->
     <div class="text-center py-12 sm:py-20 lg:py-32 w-full" data-aos="fade-up">
-      <h2 class="font-space font-extrabold flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 text-white" style="font-size:clamp(1.75rem,5vw,4rem);letter-spacing:-1.5px;">
-        Inovasi <i class="ti ti-sparkles text-lime text-xl sm:text-3xl lg:text-4xl"></i>
-        Inspirasi <i class="ti ti-sparkles text-lime text-xl sm:text-3xl lg:text-4xl"></i>
+      <h2 class="font-space font-extrabold flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 text-white" style="font-size: clamp(1.75rem, 5vw, 4rem); letter-spacing: -1.5px">
+        Inovasi <i class="ti ti-sparkles text-lime text-xl sm:text-3xl lg:text-4xl"></i> Inspirasi <i class="ti ti-sparkles text-lime text-xl sm:text-3xl lg:text-4xl"></i>
         Kreasi
       </h2>
     </div>
 
-    <!-- TEAM -->
+    <!-- TEAM SECTION -->
     <section id="team" class="px-5 sm:px-10 lg:px-16 py-10 sm:py-16 lg:py-20 w-full scroll-mt-24">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 lg:mb-16 gap-6" data-aos="fade-up">
         <div>
           <div class="font-space font-bold text-xs tracking-[0.1em] text-lime uppercase flex items-center gap-2 mb-4 before:content-[''] before:w-5 before:h-[2px] before:bg-lime">Meet the Team</div>
-          <h2 class="font-space font-extrabold tracking-tight leading-[1.1]" style="font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:-1.5px;">Temui <span class="bg-lime text-dark px-2 rounded-lg inline-block">Tim</span></h2>
+          <h2 class="font-space font-extrabold tracking-tight leading-[1.1]" style="font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -1.5px">Temui <span class="bg-lime text-dark px-2 rounded-lg inline-block">Tim</span></h2>
         </div>
         <a href="#" class="font-space font-semibold text-sm no-underline border border-[#333] text-white rounded-full px-6 py-3 inline-flex items-center gap-2 transition-all duration-200 hover:border-white hover:-translate-y-0.5 shrink-0">
           Lihat Semua Tim <i class="ti ti-arrow-right"></i>
         </a>
       </div>
 
+      <!-- Team Member Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" data-aos="fade-up" data-aos-delay="200">
         <div class="bg-[#111] border border-[#1f1f1f] rounded-2xl p-6 sm:p-8 transition-all duration-200 hover:border-lime">
           <div class="flex items-center gap-4 mb-5 relative">
@@ -210,12 +315,12 @@
               <img src="assets/img/hero_woman.png" alt="Avatar" class="w-full h-full object-cover" />
             </div>
             <div class="min-w-0">
-              <h4 class="font-space font-bold text-sm sm:text-base truncate">env</h4>
-              <span class="font-inter text-xs sm:text-sm text-[#666]">Lead Developer</span>
+              <h4 class="font-space font-bold text-sm sm:text-base truncate">Env-Charlie</h4>
+              <span class="font-inter text-xs sm:text-sm text-[#666]">Front-end Developer</span>
             </div>
-            <span class="absolute top-0 right-0 font-space font-extrabold text-lg sm:text-xl lg:text-2xl text-lime bg-lime/10 border border-lime/30 rounded-xl px-4 sm:px-5 py-2 sm:py-3">LD</span>
+            <span class="absolute top-0 right-0 font-space font-extrabold text-lg sm:text-xl lg:text-2xl text-lime bg-lime/10 border border-lime/30 rounded-xl px-4 sm:px-5 py-2 sm:py-3">FE</span>
           </div>
-          <p class="font-inter text-xs sm:text-sm text-[#888] leading-relaxed">Membangun dan mengelola seluruh proyek dari前端 hingga backend.</p>
+          <p class="font-inter text-xs sm:text-sm text-[#888] leading-relaxed">Mendesain dan membangun antarmuka yang responsif, interaktif, dan ramah pengguna.</p>
         </div>
         <div class="bg-[#111] border border-[#1f1f1f] rounded-2xl p-6 sm:p-8 transition-all duration-200 hover:border-lime">
           <div class="flex items-center gap-4 mb-5 relative">
@@ -223,27 +328,28 @@
               <img src="assets/img/hero_woman.png" alt="Avatar" class="w-full h-full object-cover" />
             </div>
             <div class="min-w-0">
-              <h4 class="font-space font-bold text-sm sm:text-base truncate">chrlzs</h4>
-              <span class="font-inter text-xs sm:text-sm text-[#666]">Frontend Developer</span>
+              <h4 class="font-space font-bold text-sm sm:text-base truncate">Env-Haru</h4>
+              <span class="font-inter text-xs sm:text-sm text-[#666]">Back-end Developer</span>
             </div>
-            <span class="absolute top-0 right-0 font-space font-extrabold text-lg sm:text-xl lg:text-2xl text-lime bg-lime/10 border border-lime/30 rounded-xl px-4 sm:px-5 py-2 sm:py-3">FD</span>
+            <span class="absolute top-0 right-0 font-space font-extrabold text-lg sm:text-xl lg:text-2xl text-lime bg-lime/10 border border-lime/30 rounded-xl px-4 sm:px-5 py-2 sm:py-3">BE</span>
           </div>
-          <p class="font-inter text-xs sm:text-sm text-[#888] leading-relaxed">Mendesain dan membangun antarmuka yang responsif dan interaktif.</p>
+          <p class="font-inter text-xs sm:text-sm text-[#888] leading-relaxed">Mengelola logika server, database, dan API agar website berjalan dengan lancar.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA SECTION: Contact / Call to Action -->
     <section id="contact" class="px-5 sm:px-10 lg:px-16 py-10 sm:py-16 lg:py-20 w-full scroll-mt-24">
       <div class="bg-lime text-dark rounded-2xl p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center text-center lg:text-left" data-aos="fade-up">
-        <h2 class="font-space font-extrabold tracking-tighter leading-[1.05]" style="font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:-2px;">Get In Touch<br />Today! <span class="text-black/30">✦</span></h2>
+        <h2 class="font-space font-extrabold tracking-tighter leading-[1.05]" style="font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -2px">Mulai Proyek<br />Anda Sekarang! <span class="text-black/30">✦</span></h2>
         <div class="flex flex-col gap-4 items-center lg:items-start">
-          <p class="font-inter text-sm sm:text-base text-black/60 leading-relaxed">Punya proyek atau pertanyaan? Kami siap membantu kamu mewujudkan visi digitalmu menjadi kenyataan.</p>
+          <p class="font-inter text-sm sm:text-base text-black/60 leading-relaxed">Punya proyek atau pertanyaan? Kami siap membantu Anda mewujudkan visi digital menjadi kenyataan. Konsultasi awal gratis!</p>
           <a href="#" class="font-space font-bold text-sm no-underline bg-dark text-white rounded-full px-7 py-3.5 inline-flex items-center transition-opacity duration-200 hover:opacity-85">Hubungi Kami →</a>
+          <!-- Social Media Tags -->
           <div class="flex gap-3 mt-2 flex-wrap justify-center lg:justify-start">
+            <span class="bg-black/10 rounded-full px-3.5 py-1.5 font-space font-bold text-xs text-dark tracking-wide">@envteam</span>
             <span class="bg-black/10 rounded-full px-3.5 py-1.5 font-space font-bold text-xs text-dark tracking-wide">Instagram</span>
             <span class="bg-black/10 rounded-full px-3.5 py-1.5 font-space font-bold text-xs text-dark tracking-wide">TikTok</span>
-            <span class="bg-black/10 rounded-full px-3.5 py-1.5 font-space font-bold text-xs text-dark tracking-wide">WhatsApp</span>
           </div>
         </div>
       </div>

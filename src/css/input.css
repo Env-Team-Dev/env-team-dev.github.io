@@ -1,8 +1,12 @@
+/* Google Fonts: Space Grotesk & Inter */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@400;500&display=swap');
+
+/* Tailwind CSS v4 */
 @import "tailwindcss";
 @source "./index.html";
 @source "./*.html";
 
+/* Custom theme tokens */
 @theme {
   --color-lime: #C8FF00;
   --color-dark: #0A0A0A;
@@ -11,6 +15,8 @@
   --animate-marquee: marquee 16s linear infinite;
   --animate-pulseGlow: pulseGlow 10s infinite alternate;
 }
+
+/* Animations */
 
 @keyframes marquee {
   0% { transform: translateX(0); }
@@ -26,7 +32,9 @@
   100% { transform: rotate(360deg); }
 }
 
+/* Custom utility components */
 @layer components {
+  /* Code block line placeholder */
   .code-line {
     height: 10px;
     border-radius: 100px;
@@ -36,9 +44,13 @@
   .code-line.indent {
     margin-left: 20px;
   }
+
+  /* Organic blob shape for avatar container */
   .avatar-blob {
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   }
+
+  /* Background glow orbs */
   .bg-glow {
     position: fixed;
     border-radius: 50%;
@@ -50,6 +62,7 @@
   }
 }
 
+/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
